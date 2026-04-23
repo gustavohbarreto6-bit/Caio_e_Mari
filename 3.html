@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de times</title>
+</head>
+<body>
+    <h2>lista de Times</h2>
+    <ul id="lista"> </ul>
+
+    <button onclick="criarLista()"> Adicionar time </button>
+
+    <script>
+        
+        const nomes = ["Santos", "Flamengo", "São Paulo", "Palmeiras", "Corinthians","Cruzeiro", "Inter", "Remo", "Bahia"];
+        
+        function criarLista(){
+            const fragmento = document.createDocumentFragment();
+
+            nomes.forEach (function(nome){
+                const item = document.createElement("li");
+                item.textContent = nome;
+
+                fragmento.appendChild(item);
+            });
+
+            const lista = document.getElementById("lista");
+
+            lista.appendChild(fragmento);
+        }
+    </script>
+</body>
+</html>
